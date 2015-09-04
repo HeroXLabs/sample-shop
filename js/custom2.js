@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	
+
 	/* Full Screen Container ======================================= */
 
 	function fullScreenContainer() {
@@ -15,16 +15,16 @@ $(document).ready(function() {
 			$("#hero").css({
 				width: screenWidth,
 				height: screenHeight
-			}); 
+			});
 		});
 	}
-	
+
 	fullScreenContainer();
 
 	/* wow ======================================= */
 
 	new WOW().init({
-		offset: 20 
+		offset: 20
 	});
 
 	/* Navbar colapse ======================================= */
@@ -44,7 +44,7 @@ $(document).ready(function() {
 
 	/* testimonial ======================================= */
 	$('.carousel').carousel();
-	
+
 	/* One Page Navigation Setup ======================================= */
 	$('#main-nav').singlePageNav({
 		offset: 60,
@@ -53,8 +53,8 @@ $(document).ready(function() {
 		beforeStart: function() {},
 		onComplete: function() {}
 	});
-	
-	/* Bootstrap Affix ======================================= */		
+
+	/* Bootstrap Affix ======================================= */
 	$('#modal-bar').affix({
 		offset: {
 			top: 10,
@@ -62,18 +62,18 @@ $(document).ready(function() {
 	});
 
 
-	/* countdown ======================================= */	
+	/* countdown ======================================= */
 	var days = 3;
 	var date = new Date();
 	var res = date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-	
+
 	$('#countdown').countdown(res, function(event) {
 	  $(this).text(
 		event.strftime('%-d days %H:%M:%S')
 	  );
 	});
 
-	/* Smooth Hash Link Scroll ======================================= */	
+	/* Smooth Hash Link Scroll ======================================= */
 	$('.smooth-scroll').click(function() {
 		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
 			var target = $(this.hash);
@@ -87,7 +87,7 @@ $(document).ready(function() {
 			}
 		}
 	});
-		
+
 	/* Project Preview	==============================================*/
 	$('.img-box').click(function(e) {
 		e.preventDefault();
@@ -105,7 +105,7 @@ $(document).ready(function() {
 		$('#project-modal').on('show.bs.modal', function() {
 			$(this).find('#sdbr-title').text(title);
 			$(this).find('#sdbr-price').text(price);
-			$(this).find('#project-content').html(descr).append('<a id="btn-order" class="btn btn-store btn-right"  href="#">Order now</a>');
+			$(this).find('#project-content').html(descr).append('<a id="btn-order" class="btn btn-store btn-right" target="_blank" href="http://alico.divshot.io/invoices/2">Order now</a>');
 			$(this).find('.screen').addClass('slides').html(slidesHtml);
 			if (elemDataCont.data('oldprice')) {
 				$(this).find('#sdbr-oldprice').show().text(elemDataCont.data('oldprice'))
